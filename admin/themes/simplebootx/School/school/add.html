@@ -1,0 +1,54 @@
+<admintpl file="header" />
+</head>
+<body>
+	<div class="wrap">
+		<ul class="nav nav-tabs">
+			<li><a href="{:U('school/index')}">学校列表</a></li>
+			<li class="active"><a href="{:U('school/add')}">添加信息</a></li>
+		</ul>
+		<form method="post" class="form-horizontal js-ajax-form" action="{:U('school/add_post')}">
+			<fieldset>
+				<div class="control-group">
+					<label class="control-label">学校编号:</label>
+					<div class="controls">
+						<input type="text" name="schoolnumber">
+						<span class="form-required">*</span>
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label">学校名称:</label>
+					<div class="controls">
+						<input type="text" name="schoolname">
+						<span class="form-required">*</span>
+					</div>
+				</div>
+				 
+				<div class="control-group">
+					<label class="control-label">资源名称</label>
+					<div class="controls">
+					<php>
+						$fieldnames=array("1"=>"专任教师基本情况","2"=>"教学成果奖","3"=>"精品课程","4"=>"授予学位数","5"=>"出版专著","6"=>"国际级科研项目");
+					</php>
+						<select name="fieldname">
+							<foreach name="fieldnames" item="vo">
+								<option value="{$key}">{$vo}</option>
+							</foreach>
+						</select>
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label">文件信息:</label>
+					<div class="controls">
+						<textarea name="fieldvalue" rows="10" cols="230" style="margin: 0px; width: 729px; height: 200px;"></textarea>
+					</div>
+				</div>
+			</fieldset>
+			<div class="form-actions">
+				<button type="submit" class="btn btn-primary js-ajax-submit">{:L('ADD')}</button>
+				<a class="btn" href="{:U('school/index')}">{:L('BACK')}</a>
+			</div>
+		</form>
+	</div>
+	<script src="__PUBLIC__/js/common.js"></script>
+</body>
+</html>

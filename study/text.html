@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="http://www.w3school.com.cn/jquery/jquery-1.11.1.min.js"></script>
+<script>
+$(document).ready(function(){
+	var rid = 1;
+	$.getJSON("http://localhost/study/newfile.php?id="+rid,function(data,status){
+		var str="";
+		for(var i=0;i<data.length;i++){
+			/* alert("Data:"+data[i]); */
+			str+="<p>"+data[i]+"</p>";
+			}
+		$("#c").html(str);
+	});
+});
+
+</script>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<div id="c"></div>
+
+
+</body>
+</html>

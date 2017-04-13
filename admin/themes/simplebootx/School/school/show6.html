@@ -1,0 +1,69 @@
+<admintpl file="header" />
+</head>
+<php>
+	$fieldnames=array("1"=>"专任教师基本情况","2"=>"教学成果奖","3"=>"精品课程","4"=>"授予学位数","5"=>"出版专著","6"=>"国际级科研项目");
+</php>
+<body ng-app="demo">
+	<div class="wrap js-check-wrap">
+		<ul class="nav nav-tabs">
+			<li><a href="{:U('school/index')}">学校列表</a></li>
+			<li ><a href="{:U('school/add')}">添加信息</a></li>
+			<li class="active"><a href="#">{$schoolname}--{$fieldnames[$fieldname]}</a></li>
+		</ul>
+		
+			<table class="table table-hover table-bordered table-list" ng-controller="showCtrl">
+				<thead>
+					<tr>
+						<th width="16">序号</th>
+						<th  >项目来源</th>
+					 	<th  >项目类别</th>
+						<th  >项目编号</th>
+						<th  >项目名称</th>
+						<th  >项目负责人</th>
+						<th  >项目开始年月</th>
+						<th  >项目结束年月</th>
+						<th  >本单位本学科到账经费（万元）</th>
+						 
+					</tr>
+				</thead>
+				<tbody>
+					 
+					<tr ng-repeat="vo in fv">
+						<td ng-bind="vo.SEQ_NO"></td>
+						<td ng-bind="vo.XMLY"></td>
+						<td ng-bind="vo.XMJB"></td>
+						<td ng-bind="vo.XMBH"></td>
+						<td ng-bind="vo.XMMC"></td>
+						<td ng-bind="vo.FZRXM"></td>
+						<td ng-bind="vo.KSNY"></td>
+						<td ng-bind="vo.JSNY"></td>
+						<td ng-bind="vo.DZJF"></td>
+						 
+						 
+					</tr>
+				 
+				</tbody>
+				
+			</table>
+			<div class="table-actions">
+				<a class="btn" href="{:U('school/index')}">{:L('BACK')}列表</a>
+				<a class="btn" href="{:U('school/add')}">继续{:L('ADD')}</a>
+			</div>
+	</div>
+	
+	<script src="__PUBLIC__/js/common.js"></script>
+	<script src="__PUBLIC__/js/angular-1.5.8/angular.min.js"></script>
+	<script type="text/javascript">
+	var fv = {};
+	fv = {$r};
+	  
+	angular.module("demo",[]).controller("showCtrl",['$scope',function($scope){
+		$scope.fv = fv.rows;
+	}]);
+	
+	 
+			
+	</script> 
+	 
+</body>
+</html>

@@ -1,0 +1,16 @@
+<div class="dh_right_bg">
+        	<php>
+        	$pid=$_GET['pid'];
+        	$nav_p = $navs[$pid];
+        	$nav_p_1ist=	$nav_p['child'];
+        	</php>
+            <div class="dh_right_t">
+                <a href="{$nav_p.href}&pid={$pid}" title="{$nav_p.label}">{$nav_p.label}</a>
+            </div>
+            <ul>
+			<volist name="nav_p_1ist" id="v">
+                <li ><a href="{$v.href}&pid={$nav_p.id}&oid={$v.id}" title="{$v.label}">{$v.label}</a><i class="fa fa-chevron-right"></i></li>
+            </volist> 
+            </ul>
+            <div class="clear"></div>
+        </div>

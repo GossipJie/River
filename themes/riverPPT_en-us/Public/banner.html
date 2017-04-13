@@ -1,0 +1,20 @@
+<div id="banner">
+			<php>
+			$home_slides=sp_getslide("cat_en");
+			$i=1;
+			</php>
+            <ul class="pics">
+            	<foreach name="home_slides" item="vo">
+                <li class="b{$i++}" style="background-image: url({:sp_get_asset_upload_path($vo['slide_pic'])});"><a target="_blank" href="{$vo.slide_url}"></a></li>
+             	</foreach>
+            </ul>
+            <div class="btns">
+                <a class="prev" href="javascript:void(0);"><span class="off"></span><span class="on"></span></a>
+                <a class="next" href="javascript:void(0);"><span class="off"></span><span class="on"></span></a>
+            </div>
+            <div class="g-wrap">
+                <ul class="idxs">
+                    <li></li><li></li><li></li><li></li>
+                </ul>
+            </div>
+        </div>

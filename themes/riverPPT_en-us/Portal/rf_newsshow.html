@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{$post_title}-{$site_seo_title}</title>
+ <meta name="author" content="{$post_author}" />
+ <meta name="keywords" content="{$post_keywords}" />
+ <meta name="description" content="{$post_excerpt}" />
+<tc_include file="Public:head"/>
+</head>
+<body>
+
+<tc_include file="Public:header"/>
+
+ 
+
+<div class="inner">
+    <div class="dh_col_3 pape_left">
+         
+        <tc_include file="Public:nav_left_top"/>    
+        
+       <tc_include file="Public:nav_left"/>
+        
+        
+        
+    </div>
+    <div class="dh_col_4">
+        <div class="pape_title">
+        	<php>
+        	$oid= $_GET['oid'];
+        	$present=sp_get_term($term_id);
+        	</php>
+              <span>{$present.name}</span>
+                       <ol class="breadcrumb" >
+                        <li><a href="__ROOT__/">Home</a></li>
+                        <li><a href="{$nav_p.href}&pid={$pid}">{$nav_p.label}</a></li>
+                        <li><a href="{:leuu('portal/list/index',array('id'=>$term_id,'pid'=>$pid,'oid'=>$oid))}">{$present.name}</a></li>
+                        
+                      </ol>
+               </div>
+                
+                <div class="post-title">
+                    <h1 class="title">{$post_title}</h1>
+					<div class="post_icon"> 
+						<!-- <span class="postcat"><i class="fa fa-list-ul"></i> <a href="#">下载</a></span> -->
+						<span class="postclock"><i class="fa fa-clock-o"></i>{$post_date}</span>
+						<span class="posteye"><i class="fa fa-eye"></i> {$post_hits}</span>
+					</div>
+				</div>
+					
+                <div class="pape_about">
+                   {$post_content}
+                    
+                </div>						
+											
+            <Div class="clear"></Div>
+        
+    </div>
+</div>
+
+    <div class="clear"></div>
+	<tc_include file="Public:footer"/>
+	<tc_include file="Public:scripts"/>
+</body>
+</html>

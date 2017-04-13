@@ -1,0 +1,14 @@
+<div class="inner">
+	 
+      <div class="dh_link">
+       	<php>$links=sp_getlinks();$i=1;</php>
+      	<span><a href="javascript:void(0);" title="International Museums and Cultural Institutions">International Museums and Cultural Institutions</a>：</span>		
+        <div class="lyl_link">
+			<foreach name="links" item="vo">
+				<php>$l = explode("|",$vo['link_name']);</php>
+                  <php>if($i!=1):</php><span>|</span><php>endif;$i++;</php>
+                  <a href="{$vo.link_url}" target="_blank">{$l[1]}</a>
+            </foreach> 
+        </div>
+      </div>
+</div>

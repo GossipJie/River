@@ -1,0 +1,6 @@
+[ 2016-11-11T13:17:16+08:00 ] ::1 /index.php?g=Portal&m=AdminPage&a=index&menuid=25
+NOTIC: D方法实例化没找到模型类Common\Model\PostsModel
+
+[ 2016-11-11T15:29:54+08:00 ] ::1 /index.php?g=&m=AdminPage&a=edit&id=2
+NOTIC: D方法实例化没找到模型类Common\Model\PostsModel
+

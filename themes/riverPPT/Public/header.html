@@ -1,0 +1,44 @@
+<div class="header">
+           <div class="inner">
+                       <div class="dh_logo">
+                           <a href="http://www.changjiangcp.com" title="" target="_blank"><img src="__TMPL__Public/images/dh_logo.png" alt=""></a>
+                       </div>
+                       <div class="dh_lang" >                          
+                           <a    href="index.php?l=zh-cn" title="">中文</a>
+                           /
+                           <a  href="index.php?l=en-us" title="">ENGLISH</a>
+                       </div>
+                        <div class="nav">
+	                        <php>
+					        $navs = sp_get_menu_tree(1);
+					        $i=1;	
+					        </php>
+                            <ul>
+                            	 <volist name="navs" id="vo">
+                            	 	<php>
+                            	 	$urlx= $i==1?$vo['href']:$vo['href']."&pid=".$vo['id'];
+                            	 	if($i!=1):
+                            	 	</php>
+                            	 	<span>|</span>
+                            	 	<php>endif;$i++;</php>
+                                    <li><a href="{$urlx}">{$vo.label}</a>
+                                    	 <php>$leve2=$vo["child"]</php>
+                                    	 <php>if(count($leve2)>0):</php>
+                                    	 <ul class="sub">
+	                                    	 <foreach name="leve2" item="to">
+	                                    	 	<php>
+	                            	 				$urlxx=  $to['href']."&pid=".$vo['id']."&oid=".$to['id'];
+	                            	 			</php>
+	                                                <li><a href="{$urlxx}">{$to.label}</a></li>
+											</foreach>
+                                           </ul>
+                                           <php>endif</php>
+                                    </li>
+                                                                       
+                                 </volist>
+                            </ul>
+                        </div>
+            </div>
+            <Div class="clear"></Div>
+</div>
+<tc_include file="Public:banner"/>

@@ -1,0 +1,9 @@
+<php>
+    $nav_ojsx = $navs[$huiwu_id];
+	$nav_ojs_1ist=$nav_ojsx['child'];
+</php>
+<volist name="nav_ojs_1ist" id="v">
+	<a class="dh_sev1" href="{$v.href}&pid={$nav_ojsx.id}&oid={$v.id}" title="{$v.label}">
+	     <i class="fa  {$v.icon}"></i>{$v.label}
+	</a>
+</volist>

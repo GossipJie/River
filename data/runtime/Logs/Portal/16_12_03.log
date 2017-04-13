@@ -1,0 +1,12 @@
+[ 2016-12-03T15:22:29+08:00 ] 127.0.0.1 /index.php?g=Portal&m=AdminPost&a=index&menuid=7
+NOTIC: D方法实例化没找到模型类Portal\Model\PostsModel
+
+[ 2016-12-03T15:22:38+08:00 ] ::1 /index.php?g=&m=AdminPost&a=edit&term=&id=108
+NOTIC: D方法实例化没找到模型类Portal\Model\PostsModel
+
+[ 2016-12-03T15:22:54+08:00 ] ::1 /index.php?g=Portal&m=AdminPage&a=index&menuid=25
+NOTIC: D方法实例化没找到模型类Common\Model\PostsModel
+
+[ 2016-12-03T15:22:58+08:00 ] ::1 /index.php?g=&m=AdminPage&a=edit&id=1
+NOTIC: D方法实例化没找到模型类Common\Model\PostsModel
+
